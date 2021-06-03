@@ -1,22 +1,46 @@
-const CORREDORES = []
+
+import Ciclista from './corredor.js'
+
+CORREDORES = [
+  new Ciclista = ('luis gferard', 50,30,20,10,10)
+]
+
+let modalAdicionarCiclistaE1 = document.querySelector('#modalAdicionarCiclista')
+var modal = bootstrap.Modal.getInstance(modalAdicionarCiclistaE1)
+
+modalAdicionarCiclistaE1.addEventListener('show.bs.modal',e=>{
+  modal=modal?modal:bootstrap.Modal.getInstance(modalAdicionarCiclistaE1)
+})
+
 document.querySelector('#frm-ciclista').addEventListener('submit', e => {
-  let nombre = document.querySelector('nombre_ciclista').value
-  let carrera1 = document.querySelector('carrera_1_corredor').value
-  let carrera2 = document.querySelector('carrera_2_corredor').value
-  let carrera3 = document.querySelector('carrera_3_corredor').value
-  let carrera4 = document.querySelector('carrera_4_corredor').value
-  let carrera5 = document.querySelector('carrera_5_corredor').value
-  const corredor = {
-    nombre: nombre,
-    carrera1: carrera1,
-    carrera2: carrera2,
-    carrera3: carrera3,
-    carrera4: carrera4,
-    carrera5: carrera5
-  }
+  e.preventDefault()
+ 
+  // let nombre = document.querySelector('#nombre_ciclista').value
+  // let carrera1 = document.querySelector('#carrera_1_corredor').value
+  // let carrera2 = document.querySelector('#carrera_2_corredor').value
+  // let carrera3 = document.querySelector('#carrera_3_corredor').value
+  // let carrera4 = document.querySelector('#carrera_4_corredor').value
+  // let carrera5 = document.querySelector('#carrera_5_corredor').value
+  // const corredor = {
+  //   nombre: nombre,
+  //   carrera1: carrera1,
+  //   carrera2: carrera2,
+  //   carrera3: carrera3,
+  //   carrera4: carrera4,
+  //   carrera5: carrera5
+  // }
+  const corredor = new Ciclista()
+
+  corredor.nombre=document.querySelector('#nombre_ciclista').value
+  corredor.carrera1=parseFloat(document.querySelector('#carrera_1_corredor').value)
+  corredor.carrera2=parseFloat(document.querySelector('#carrera_2_corredor').value)
+  corredor.carrera3=parseFloat(document.querySelector('#carrera_3_corredor').value)
+  corredor.carrera4=parseFloat(document.querySelector('#carrera_4_corredor').value)
+  corredor.carrera5=parseFloat(document.querySelector('#carrera_5_corredor').value)
+
 
   CORREDORES.push(corredor)
-  e.preventDefault()
+  modal.toggle();
 })
 
 // console.log(corredor)
