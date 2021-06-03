@@ -1,8 +1,8 @@
 
 import Ciclista from './corredor.js'
 
-CORREDORES = [
-  new Ciclista = ('luis gferard', 50,30,20,10,10)
+const CORREDORES = [
+  new Ciclista("luisgferard", 50,30,20,10,10)
 ]
 
 let modalAdicionarCiclistaE1 = document.querySelector('#modalAdicionarCiclista')
@@ -37,7 +37,6 @@ document.querySelector('#frm-ciclista').addEventListener('submit', e => {
   corredor.carrera3=parseFloat(document.querySelector('#carrera_3_corredor').value)
   corredor.carrera4=parseFloat(document.querySelector('#carrera_4_corredor').value)
   corredor.carrera5=parseFloat(document.querySelector('#carrera_5_corredor').value)
-
 
   CORREDORES.push(corredor)
   modal.toggle();
